@@ -473,7 +473,7 @@ function _asyncToGenerator(n) {
     likeFn();
   }
   if (loc.includes("dbzy") || loc.includes("doubanz")) {
-    if (loc.includes("/vod/")) {
+    if (loc.includes("/voddetail/")) {
       var vodList = _$$(".vodplayinfo li") || [];
       var api = "https://jsjiexi.com/play/?url=";
       vodList.forEach(function (li) {
