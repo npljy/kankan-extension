@@ -1,3 +1,22 @@
+function _typeof(o) {
+  "@babel/helpers - typeof";
+  return (
+    (_typeof =
+      "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+        ? function (o) {
+            return typeof o;
+          }
+        : function (o) {
+            return o &&
+              "function" == typeof Symbol &&
+              o.constructor === Symbol &&
+              o !== Symbol.prototype
+              ? "symbol"
+              : typeof o;
+          }),
+    _typeof(o)
+  );
+}
 function _regeneratorRuntime() {
   "use strict";
   /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime =
@@ -443,25 +462,6 @@ function _asyncToGenerator(n) {
     });
   };
 }
-function _typeof(o) {
-  "@babel/helpers - typeof";
-  return (
-    (_typeof =
-      "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
-        ? function (o) {
-            return typeof o;
-          }
-        : function (o) {
-            return o &&
-              "function" == typeof Symbol &&
-              o.constructor === Symbol &&
-              o !== Symbol.prototype
-              ? "symbol"
-              : typeof o;
-          }),
-    _typeof(o)
-  );
-}
 // cms资源站播放助手
 (function () {
   var ACT_LIKE = "like"; // 行为：收藏
@@ -472,22 +472,98 @@ function _typeof(o) {
   if (locHash.includes("kankan")) {
     likeFn();
   }
-  if (loc.includes("moduzy")) {
-    if (loc.includes("/vod/")) insertLikeBtn();
-    var vodList = _$$(".content__playlist li") || [];
-    var api = "https://jiexi.modujx01.com/?url=";
-    vodList.forEach(function (li) {
-      var adoc = _$$("a", li)[0];
-      var xm = adoc.href;
-      if (xm.includes("http")) {
-        var _li$innerText;
+  if (loc.includes("dbzy") || loc.includes("doubanz")) {
+    if (loc.includes("/vod/")) {
+      var vodList = _$$(".vodplayinfo li") || [];
+      var _api = "https://jsjiexi.com/play/?url=";
+      vodList.forEach(function (li) {
+        var _adoc$innerText;
+        var adoc = _$$("a", li)[0];
+        var xm = adoc.href;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
         var nums = adoc.innerText;
         var num = nums ? nums.split("$")[0] : "";
-        var _a = document.createElement("a");
-        _a.href = xm;
-        _a.target = "_blank";
-        _a.className = "kk-btn d-i-b";
-        _a.innerText = "\u64AD\u653E:".concat(num);
+        var text = "\u64AD\u653E:".concat(num);
+        var href = xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api)) href = _api + xm;
+        var _a = createLink(href, text);
+        !(
+          adoc !== null &&
+          adoc !== void 0 &&
+          (_adoc$innerText = adoc.innerText) !== null &&
+          _adoc$innerText !== void 0 &&
+          _adoc$innerText.includes("全选")
+        ) && adoc.after(_a);
+      });
+      insertJump(".vodplayinfo h3", ".ibox");
+      insertLikeBtn();
+      removeElements("header");
+    }
+    addClass(".xing_top", "kk-sticky");
+    addClass(".search-text", "kk-search-ipt");
+    addClass(".search-btn", "kk-search-btn");
+    removeElements(".gg_top");
+  } else if (loc.includes("mozhua")) {
+    if (loc.includes("/vod/")) {
+      var _vodList = _$$(".listitems");
+      _vodList.forEach(function (li) {
+        var num = li.innerText.split("$")[0];
+        var playBtn = _$(".btn a", li);
+        playBtn.innerText = playBtn.innerText + ":" + num;
+        playBtn.classList.add("kk-btn");
+      });
+      insertLikeBtn();
+      bindPlayBtn();
+    }
+    addClass("header", "kk-sticky");
+    addClass(".search-input", "kk-search-ipt");
+    addClass(".search_btn", "kk-search-btn");
+  } else if (loc.includes("jisuz")) {
+    if (loc.includes("/vod/")) {
+      var _api2 = "https://jsjiexi.com/play/?url=";
+      var _vodList2 = _$$(".vod-list .list-item") || [];
+      _vodList2.forEach(function (li) {
+        var _adoc$innerText2;
+        var adoc = _$$("a", li)[0];
+        var xm = adoc.href;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
+        var nums = adoc.innerText;
+        var num = nums ? nums.split("$")[0] : "";
+        var text = "\u64AD\u653E:".concat(num);
+        var href = xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api2)) href = _api2 + xm;
+        var _a = createLink(href, text);
+        !(
+          adoc !== null &&
+          adoc !== void 0 &&
+          (_adoc$innerText2 = adoc.innerText) !== null &&
+          _adoc$innerText2 !== void 0 &&
+          _adoc$innerText2.includes("全选")
+        ) && adoc.after(_a);
+      });
+      insertLikeBtn();
+      insertJump(".vod-list h3", ".vod-detail");
+      removeElements(".topbg");
+    }
+    addClass(".top-center", "kk-sticky");
+    addClass(".search-text", "kk-search-ipt");
+    addClass(".top-search button", "kk-search-btn");
+    removeElements(".topbg a");
+  } else if (loc.includes("moduzy")) {
+    if (loc.includes("/vod/")) {
+      var _vodList3 = _$$(".content__playlist li") || [];
+      var _api3 = "https://jiexi.modujx01.com/?url=";
+      _vodList3.forEach(function (li) {
+        var _li$innerText;
+        var adoc = _$$("a", li)[0];
+        var xm = adoc.href;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
+        var nums = adoc.innerText;
+        var num = nums ? nums.split("$")[0] : "";
+        var text = "\u64AD\u653E:".concat(num);
+        var href = xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api3)) href = _api3 + xm;
+        var _a = createLink(href, text);
         !(
           li !== null &&
           li !== void 0 &&
@@ -495,40 +571,26 @@ function _typeof(o) {
           _li$innerText !== void 0 &&
           _li$innerText.includes("全选")
         ) && li.append(_a);
-      }
-    });
+      });
+      insertLikeBtn();
+      removeElements(".index-header");
+    }
+    addClass(".header", "kk-sticky");
+    addClass(".mac_wd.form-control", "kk-search-ipt");
   } else if (loc.includes("haohuazy") || loc.includes("haohuazyziyuan")) {
-    if (loc.includes("detail")) insertLikeBtn();
-    var _vodList = _$$(".vod-list .list-item") || [];
-    var _api = "https://hhjiexi.com/play/?url=";
-    var wraps = _$$(".vod-list h3");
-    wraps.forEach(function (e) {
-      if (e.innerText.includes("m3u8")) {
-        e.id = "kk-play-m3u8";
-      } else {
-        e.id = "kk-play-yun";
-      }
-    });
-    var title = _$(".vod-detail .vod-title");
-    title.classList = title.classList + " flex-block center-items";
-    title.innerHTML =
-      title.innerHTML +
-      '<span>&nbsp;&nbsp;[点击跳转到目标位置]==></span><a class="kk-btn d-i-b" target="_self" href="#kk-play-yun">yun</a><a class="kk-btn d-i-b" target="_self" href="#kk-play-m3u8">m3u8</a>';
-    _vodList.forEach(function (li) {
-      var xm = _$$("a", li)[0].href;
-      if (xm.includes("http")) {
+    if (loc.includes("detail")) {
+      var _vodList4 = _$$(".vod-list .list-item") || [];
+      var _api4 = "https://hhjiexi.com/play/?url=";
+      _vodList4.forEach(function (li) {
         var _li$innerText2;
+        var xm = _$$("a", li)[0].href;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
         var nums = _$(".list-title", li).innerText;
         var num = nums ? nums.split("$")[0] : "";
-        var _a = document.createElement("a");
-        if (xm.includes(".m3u8")) {
-          _a.href = _api + xm;
-        } else {
-          _a.href = xm;
-        }
-        _a.target = "_blank";
-        _a.className = "kk-btn d-i-b";
-        _a.innerText = "\u64AD\u653E:".concat(num);
+        var text = "\u64AD\u653E:".concat(num);
+        var href = xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api4)) href = _api4 + xm;
+        var _a = createLink(href, text);
         !(
           li !== null &&
           li !== void 0 &&
@@ -536,40 +598,28 @@ function _typeof(o) {
           _li$innerText2 !== void 0 &&
           _li$innerText2.includes("全选")
         ) && li.append(_a);
-      }
-    });
+      });
+      insertLikeBtn();
+      insertJump(".vod-list h3", ".vod-info");
+    }
+    addClass(".top", "kk-sticky");
+    addClass(".search-text", "kk-search-ipt");
+    addClass(".top-search button", "kk-search-btn");
+    removeElements([".card", "body>a"]);
   } else if (loc.includes("guangsuzy") || loc.includes("guangsuziyuan")) {
-    if (loc.includes("detail")) insertLikeBtn();
-    var _vodList2 = _$$(".dy-collect-list li") || [];
-    var _api2 = "https://www.gszyv.com/m3u8/?url=";
-    var _wraps = _$$(".dy-collect-video");
-    _wraps.forEach(function (e) {
-      if (e.innerText.includes(".m3u8")) {
-        e.id = "kk-play-m3u8";
-      } else {
-        e.id = "kk-play-yun";
-      }
-    });
-    var _title = _$(".dy-collect .dy-title");
-    _title.classList = _title.classList + " flex-block center-items";
-    _title.innerHTML =
-      _title.innerHTML +
-      '<span>&nbsp;&nbsp;[点击跳转到目标位置]==></span><a class="kk-btn d-i-b" target="_self" href="#kk-play-yun">yun</a><a class="kk-btn d-i-b" target="_self" href="#kk-play-m3u8">m3u8</a>';
-    _vodList2.forEach(function (li) {
-      var xm = _$$("a", li)[0].href;
-      if (xm.includes("http")) {
+    if (loc.includes("detail")) {
+      var _vodList5 = _$$(".dy-collect-list li") || [];
+      var _api5 = "https://www.gszyv.com/m3u8/?url=";
+      _vodList5.forEach(function (li) {
         var _li$innerText3;
+        var xm = _$$("a", li)[0].href;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
         var nums = _$(".c-name", li).innerText;
         var num = nums ? nums : "";
-        var _a = document.createElement("a");
-        if (xm.includes(".m3u8")) {
-          _a.href = _api2 + xm;
-        } else {
-          _a.href = xm;
-        }
-        _a.target = "_blank";
-        _a.className = "kk-btn d-i-b";
-        _a.innerText = "\u64AD\u653E:".concat(num);
+        var text = "\u64AD\u653E:".concat(num);
+        var href = xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api5)) href = _api5 + xm;
+        var _a = createLink(href, text);
         !(
           li !== null &&
           li !== void 0 &&
@@ -577,39 +627,24 @@ function _typeof(o) {
           _li$innerText3 !== void 0 &&
           _li$innerText3.includes("全选")
         ) && li.append(_a);
-      }
-    });
+      });
+      insertLikeBtn();
+      insertJump(".dy-collect-video", ".detailed");
+    }
   } else if (loc.includes("hongniuzy") || loc.includes("hongniuziyuan")) {
-    if (loc.includes("detail")) insertLikeBtn();
-    _$(".xing_top").classList.add("kk-sticky");
-    _$("#wd").classList.add("kk-search-ipt");
-    _$(".search-btn").classList.add("kk-search-btn");
-    var _vodList3 = _$$(".vodplayinfo li") || [];
-    var _api3 = "https://www.hnjiexi.com/m3u8/?url=";
-    var wrap = _$$(".playBox")[1];
-    var _title2 = _$(".liketitle", wrap);
-    _title2.style.height = "auto";
-    _title2.innerHTML =
-      '<div class="flex-block center-items">' +
-      _title2.innerHTML +
-      "</div>" +
-      '<div><span class="f-s-16">&nbsp;&nbsp;[点击跳转到目标位置]==></span><a class="kk-btn d-i-b" target="_self" href="#play_1">yun</a><a class="kk-btn d-i-b" target="_self" href="#play_2">m3u8</a></div>';
-    _vodList3.forEach(function (li) {
-      var xm = _$$("a", li)[0].href;
-      if (xm.includes("http")) {
+    if (loc.includes("detail")) {
+      var _vodList6 = _$$(".vodplayinfo li") || [];
+      var _api6 = "https://www.hnjiexi.com/m3u8/?url=";
+      _vodList6.forEach(function (li) {
         var _li$innerText4;
-        li.classList = li.classList + " vod-li";
+        var xm = _$$("a", li)[0].href;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
+        li.classList.add("vod-li");
         var num = _$$("a", li)[0].title;
-        var _a = document.createElement("a");
-        _a.href = "#";
-        if (xm.includes(".m3u8")) {
-          _a.href = _api3 + xm;
-        } else {
-          _a.href = xm;
-        }
-        _a.target = "_blank";
-        _a.className = "kk-btn";
-        _a.innerText = "\u64AD\u653E:".concat(num);
+        var text = "\u64AD\u653E:".concat(num);
+        var href = xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api6)) href = _api6 + xm;
+        var _a = createLink(href, text);
         !(
           li !== null &&
           li !== void 0 &&
@@ -617,135 +652,97 @@ function _typeof(o) {
           _li$innerText4 !== void 0 &&
           _li$innerText4.includes("全选")
         ) && li.append(_a);
-      }
-    });
-  } else if (
-    loc.includes("foxzyw") ||
-    loc.includes("foxzy") ||
-    loc.includes("kudian")
-  ) {
-    if (loc.includes("detail")) insertLikeBtn();
-    var _vodList4 = _$$(".stui-content__playlist li") || [];
-    var jxUrl = "http://jx.ykyunbo.com/m3u8.php?url=";
-    _vodList4.forEach(function (li) {
-      var xm = _$$(".url", li)[0].innerText;
-      var num = _$$(".copy_text", li)[0].innerText.split(" : ")[0];
-      if (xm.includes("http")) {
-        var _a = document.createElement("a");
-        if (xm.includes(".m3u8")) {
-          _a.href = jxUrl + xm;
-        } else {
-          _a.href = xm;
-        }
-        _a.target = "_blank";
-        _a.className = "kk-btn";
-        _a.innerText = "\u64AD\u653E:".concat(num);
-        !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
-      }
-    });
-  } else if (loc.includes("1080zyk")) {
-    if (loc.includes("detail")) insertLikeBtn();
-    var _vodList5 = _$$(".playlist li") || [];
-    _vodList5.forEach(function (li) {
-      var _$$$;
-      var xm = li.innerText;
-      var nums = xm.split("$");
-      var num = nums[0];
-      var link =
-        (_$$$ = _$$("a", li)[0]) === null || _$$$ === void 0
-          ? void 0
-          : _$$$.href;
-      if (!link) {
-        link = nums[1];
-      }
-      var _a = document.createElement("a");
-      _a.href = link;
-      _a.target = "_blank";
-      _a.className = "kk-btn kk-btn-sure";
-      _a.innerText = "\u64AD\u653E:".concat(num);
-      !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
-    });
-  } else if (loc.includes("ffzy")) {
-    var _titles$index;
-    if (loc.includes("detail")) insertLikeBtn();
-    var _vodList6 = _$$(".playlist li") || [];
-    var _jxUrl = "https://svip.ffzyplay.com/?url=";
-    var titles = _$$(".whitetitle");
-    var _wraps2 = _$$("#content h4");
-    _wraps2.forEach(function (e) {
-      if (e.innerText.includes("m3u8")) {
-        e.id = "kk-play-m3u8";
-      } else {
-        e.id = "kk-play-yun";
-      }
-    });
-    var index = titles.length - 2;
-    if (isNaN(index) || index < 0) index = 0;
-    var titleHtml =
-      (_titles$index = titles[index]) === null || _titles$index === void 0
-        ? void 0
-        : _titles$index.innerHTML;
-    if (_typeof(titles[index]) === "object" && !Array.isArray(titles[index])) {
-      var _titles$index2;
-      titles[index].classList =
-        ((_titles$index2 = titles[index]) === null || _titles$index2 === void 0
-          ? void 0
-          : _titles$index2.classList) + " flex-block";
-      titles[index].innerHTML =
-        '<div class="flex-block center-items">' +
-        titleHtml +
-        "</div>" +
-        '<div><span class="f-s-16">&nbsp;&nbsp;[点击跳转到目标位置]==></span><a class="kk-btn d-i-b" target="_self" href="#kk-play-yun">yun</a><a class="kk-btn d-i-b" target="_self" href="#kk-play-m3u8">m3u8</a></div>';
+      });
+      insertLikeBtn();
+      insertJump(".vodplayinfo h3", ".ibox");
+      removeElements(".index-header");
     }
-    _vodList6.forEach(function (li) {
-      var xm = _$$("font", li)[0].innerText;
-      var links = xm.split("$");
-      var num = links[0];
-      var link = links[1];
-      if (xm.includes("http")) {
-        var _a = document.createElement("a");
-        if (xm.includes(".m3u8")) {
-          _a.href = _jxUrl + link;
-        } else {
-          _a.href = link;
-        }
-        _a.target = "_blank";
-        _a.className = "kk-btn";
-        _a.innerText = "\u64AD\u653E:".concat(num);
+    removeElements(".index-header a");
+    addClass(".xing_top", "kk-sticky");
+    addClass("#wd", "kk-search-ipt");
+    addClass(".search-btn", "kk-search-btn");
+  } else if (loc.includes("1080zyk")) {
+    if (loc.includes("detail")) {
+      var _vodList7 = _$$(".playlist li") || [];
+      _vodList7.forEach(function (li) {
+        var _$$$;
+        var xm = li.innerText;
+        var nums = xm.split("$");
+        var num = nums[0];
+        var text = "\u64AD\u653E:".concat(num);
+        var link =
+          ((_$$$ = _$$("a", li)[0]) === null || _$$$ === void 0
+            ? void 0
+            : _$$$.href) || nums[1];
+        var _a = createLink(link, text);
         !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
-      }
-    });
+      });
+      insertLikeBtn();
+      removeElements(["#topBar", "body>table"]);
+    }
+    addClass(".search-text", "kk-search-ipt");
+    addClass(".search-btn", "kk-search-btn");
+  } else if (loc.includes("ffzy")) {
+    if (loc.includes("detail")) {
+      var _vodList8 = _$$(".playlist li") || [];
+      var jxUrl = "https://svip.ffzyplay.com/?url=";
+      _vodList8.forEach(function (li) {
+        var _xm;
+        var xm = _$$("font", li)[0].innerText;
+        if (!xm.includes("http")) xm = window.location.origin + "/" + xm;
+        var links = xm.split("$");
+        var num = links[0];
+        var link = links[1];
+        var text = "\u64AD\u653E:".concat(num);
+        var href = link;
+        if (xm.includes(".m3u8") && !xm.includes(api)) href = jxUrl + link;
+        var _a = createLink(href, text);
+        !((_xm = xm) !== null && _xm !== void 0 && _xm.includes("全选")) &&
+          li.append(_a);
+      });
+      insertLikeBtn();
+      insertJump("#content h4", ".people");
+      removeElements(".index-header");
+    }
+    addClass(".head_box", "kk-sticky");
+    addClass(".search-input", "kk-search-ipt");
+    addClass("#searchbutton", "kk-search-btn");
   } else if (loc.includes("xinlangz")) {
-    if (loc.includes("detail")) insertLikeBtn();
-    var _vodList7 = _$$(".collect-item-href .left") || [];
-    var jxApi = "https://www.xinlangjiexi.com/m3u8/?url=";
-    _vodList7.forEach(function (li) {
-      var aEle = _$("a", li);
-      var _link = aEle.href;
-      var num = _$("span", li).innerText;
-      var _a = document.createElement("a");
-      _a.href = _link.includes(".m3u8") ? jxApi + _link : _link;
-      _a.target = "_blank";
-      _a.className = "kk-btn";
-      _a.innerText = "\u64AD\u653E:".concat(num);
-      li.append(_a);
-    });
+    if (loc.includes("detail")) {
+      var _vodList9 = _$$(".collect-item-href .left") || [];
+      var jxApi = "https://www.xinlangjiexi.com/m3u8/?url=";
+      _vodList9.forEach(function (li) {
+        var num = _$("span", li).innerText;
+        var text = "\u64AD\u653E:".concat(num);
+        var aEle = _$("a", li);
+        var _link = aEle.href;
+        if (_link.includes(".m3u8") && !_link.includes(jxApi))
+          _link = jxApi + _link;
+        var _a = createLink(_link, text);
+        li.append(_a);
+      });
+      insertLikeBtn();
+      insertJump(".collect-item-title", ".dy-details");
+    }
+    removeElements(["body>a"]);
   } else if (loc.includes("ikunzy")) {
-    var _$2;
-    if (loc.includes("voddetail")) insertLikeBtn();
+    if (loc.includes("voddetail")) {
+      var _vodList10 = _$$(".listitems");
+      _vodList10.forEach(function (li) {
+        var num = li.innerText.split("$")[0];
+        var playBtn = _$(".btn a", li);
+        playBtn.innerText = playBtn.innerText + ":" + num;
+        playBtn.classList.add("kk-btn");
+      });
+      insertLikeBtn();
+      removeElements(".indextop");
+    }
     $(".index-top-long").css({
       display: "none",
       width: 0,
       height: 0,
       visibility: "hidden",
       transform: "scale(0)"
-    });
-    var _vodList8 = _$$(".listitems");
-    _vodList8.forEach(function (li) {
-      var num = li.innerText.split("$")[0];
-      var playBtn = _$(".btn a", li);
-      playBtn.innerText = playBtn.innerText + ":" + num;
-      playBtn.classList.add("kk-btn");
     });
     bindPlayBtn();
     $(".indextop")
@@ -757,95 +754,81 @@ function _typeof(o) {
         $(".notice").stop();
         $(".notice").slideUp();
       });
-    (_$2 = _$("#layui-layer1")) === null ||
-      _$2 === void 0 ||
-      _$2.classList.add("kk-blocked");
-    _$(".tabletitle").classList.add("kk-sticky");
     _$(".search_input").style.width = "300px";
-    _$(".search_input").classList.add("kk-search-ipt");
-    _$(".search_btn").classList.add("kk-search-btn");
+    addClass("#layui-layer1", "kk-blocked");
+    addClass(".tabletitle", "kk-sticky");
+    addClass(".search_input", "kk-search-ipt");
+    addClass(".search_btn", "kk-search-btn");
   } else if (loc.includes("suonizy") || loc.includes("snzy")) {
-    if (loc.includes("voddetail")) insertLikeBtn();
-    var _vodList9 = _$$(".dy-collect-list li");
-    _vodList9.forEach(function (li) {
-      var _$$$2;
-      var xm = li.innerText;
-      var nums = xm.split("$");
-      var num = nums[0];
-      var link =
-        (_$$$2 = _$$("a", li)[0]) === null || _$$$2 === void 0
-          ? void 0
-          : _$$$2.href;
-      if (!link) {
-        link = nums[1];
-      }
-      var _a = document.createElement("a");
-      _a.href = link;
-      _a.target = "_blank";
-      _a.className = "kk-btn kk-btn-sure";
-      _a.innerText = "\u64AD\u653E:".concat(num);
-      !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
-    });
-  } else if (loc.includes("kkzy.tv") || loc.includes("kuaikan")) {
-    if (loc.includes("vod/detail")) insertLikeBtn();
-    var _vodList10 = _$$(".stui-content__playlist li");
-    _vodList10.forEach(function (li) {
-      var nums = _$(".copy_text", li);
-      var num = nums.innerText.split("$")[0];
-      var playBtn = _$(".text-muted", li);
-      playBtn.innerText = "播放:" + num;
-      playBtn.classList.add("kk-btn");
-    });
-    bindPlayBtn();
+    if (loc.includes("voddetail")) {
+      var _vodList11 = _$$(".dy-collect-list li");
+      _vodList11.forEach(function (li) {
+        var _$$$2;
+        var xm = li.innerText;
+        var nums = xm.split("$");
+        var num = nums[0];
+        var text = "\u64AD\u653E:".concat(num);
+        var link =
+          ((_$$$2 = _$$("a", li)[0]) === null || _$$$2 === void 0
+            ? void 0
+            : _$$$2.href) || nums[1];
+        var _a = createLink(link, text);
+        !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
+      });
+      insertLikeBtn();
+      removeElements([".link-box"]);
+    }
+    addClass("#wd", "kk-search-ipt");
+    addClass(".nav-input form button", "kk-search-btn");
+    removeElements(["header .content >a"]);
   } else if (loc.includes("bfzy.tv") || loc.match(/bfzy\d+\.tv/)) {
-    if (loc.includes("vod/detail")) insertLikeBtn();
-    var _vodList11 = _$$(".playlist li") || [];
-    _vodList11.forEach(function (li) {
-      var _$$$3;
-      var xm = li.innerText;
-      var nums = xm.split("$");
-      var num = nums[0];
-      var link =
-        (_$$$3 = _$$("a", li)[0]) === null || _$$$3 === void 0
-          ? void 0
-          : _$$$3.href;
-      if (!link) {
-        link = nums[1];
-      }
-      var _a = document.createElement("a");
-      _a.href = link;
-      _a.target = "_blank";
-      _a.className = "kk-btn kk-btn-sure";
-      _a.innerText = "\u64AD\u653E:".concat(num);
-      !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
-    });
+    if (loc.includes("vod/detail")) {
+      var _vodList12 = _$$(".playlist li") || [];
+      _vodList12.forEach(function (li) {
+        var _$$$3;
+        var xm = li.innerText;
+        var nums = xm.split("$");
+        var num = nums[0];
+        var text = "\u64AD\u653E:".concat(num);
+        var link =
+          ((_$$$3 = _$$("a", li)[0]) === null || _$$$3 === void 0
+            ? void 0
+            : _$$$3.href) || nums[1];
+        var _a = createLink(link, text);
+        !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
+      });
+      insertLikeBtn();
+      insertJump("#content h4", ".people");
+      removeElements(".index-header");
+    }
+    addClass(".head_box", "kk-sticky");
+    addClass(".search-input", "kk-search-ipt");
+    addClass("#searchbutton", "kk-search-btn");
+    removeElements('.index-card a[href*="ads"]');
   } else if (loc.includes("huyazy") || loc.includes("huyaziyuan")) {
-    if (loc.includes("vod/detail")) insertLikeBtn();
-    var _jxUrl2 = "https://huyajx.com/play?url=";
-    var _vodList12 = _$$(".vodplayinfo li") || [];
-    _vodList12.forEach(function (li) {
-      var _$$$4;
-      var xm = li.innerText;
-      var nums = xm.split("$");
-      var num = nums[0];
-      var link =
-        (_$$$4 = _$$("a", li)[0]) === null || _$$$4 === void 0
-          ? void 0
-          : _$$$4.href;
-      if (!link) {
-        link = nums[1];
-      }
-      var _a = document.createElement("a");
-      if (xm.includes(".m3u8")) {
-        _a.href = _jxUrl2 + link;
-      } else {
-        _a.href = link;
-      }
-      _a.target = "_blank";
-      _a.className = "kk-btn kk-btn-sure";
-      _a.innerText = "\u64AD\u653E:".concat(num);
-      !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
-    });
+    if (loc.includes("vod/detail")) {
+      var _jxUrl = "https://huyajx.com/play?url=";
+      var _vodList13 = _$$(".vodplayinfo li") || [];
+      _vodList13.forEach(function (li) {
+        var _$$$4;
+        var xm = li.innerText;
+        var nums = xm.split("$");
+        var num = nums[0];
+        var text = "\u64AD\u653E:".concat(num);
+        var link =
+          ((_$$$4 = _$$("a", li)[0]) === null || _$$$4 === void 0
+            ? void 0
+            : _$$$4.href) || nums[1];
+        var href = link;
+        if (xm.includes(".m3u8") && !xm.includes(_jxUrl)) href = _jxUrl + link;
+        var _a = createLink(href, text);
+        !(xm !== null && xm !== void 0 && xm.includes("全选")) && li.append(_a);
+      });
+      insertLikeBtn();
+      insertJump(".vodplayinfo h3", ".ibox");
+      removeElements([".imagetopbg", ".index-header", ".noticetop", "body>a"]);
+    }
+    removeElements([".imagetopbg", "body>a"]);
   }
   bindPlayBtn();
   function bindPlayBtn() {
@@ -973,6 +956,33 @@ function _typeof(o) {
     );
     return _likeFn.apply(this, arguments);
   }
+  function createLink(href, text) {
+    var _a = document.createElement("a");
+    _a.href = href;
+    _a.target = "_blank";
+    _a.className = "kk-btn kk-btn-sure";
+    _a.innerText = text;
+    return _a;
+  }
+  function insertJump(wrap, tar) {
+    var text =
+      arguments.length > 2 && arguments[2] !== undefined
+        ? arguments[2]
+        : "m3u8";
+    var wraps = _$$(wrap);
+    wraps.forEach(function (e) {
+      if (!e.innerText.includes(text)) {
+        e.id = "kk-play-yun";
+      } else {
+        e.id = "kk-play-m3u8";
+      }
+    });
+    var title = _$(tar);
+    var divHtml = document.createElement("div");
+    divHtml.innerHTML =
+      '<div style="text-align:center;font-size:30px;font-weight:bold"><a class="kk-btn kk-btn-jump d-i-b" target="_self" href="#kk-play-yun">跳到yun</a><a class="kk-btn kk-btn-jump d-i-b" target="_self" href="#kk-play-m3u8">跳到m3u8</a></div>';
+    title.after(divHtml);
+  }
   function insertLikeBtn() {
     var likeWrap = document.createElement("div");
     likeWrap.className = "like-wrap";
@@ -1005,38 +1015,37 @@ function _typeof(o) {
       });
       return false;
     };
-
-    // if(!isPhone()) insertApp()
+    if (!isPhone()) insertApp();
   }
   function sendMsg(data) {
     !!data && chrome.runtime.sendMessage(data);
   }
   function insertApp() {
-    var isClosed = localStorage.getItem("isClosed") === "true";
+    var isClosed = sessionStorage.getItem("isClosed") !== "false";
     var ifm = document.createElement("div");
     var open = document.createElement("button");
     var close = document.createElement("button");
     var reload = document.createElement("button");
-    var initBtm = isClosed ? "-350px" : "0px";
+    var initBtm = isClosed ? "-465px" : "0px";
     var closeRotate = isClosed ? "135" : "0";
     var closeTitle = isClosed ? "展开" : "收起";
-    ifm.innerHTML =
-      '<iframe id="kk-ifm" src="https://htmls-ten.vercel.app" width="100%" height="100%" style="border:none;border-radius:4px;"/>';
     ifm.style.cssText =
       "position:fixed;bottom:" +
       initBtm +
-      ";right:0;box-sizing:border-box;border:none;border-radius:4px;width:300px;height:500px;transition:bottom 1s;";
+      ";right:80px;z-index:99999;box-sizing:border-box;border:1px solid;border-radius:4px;width:300px;height:500px;background:#ffffff55;transition:bottom 1s;box-shadow: 0px 0px 20px 2px #000000cc";
+    ifm.innerHTML =
+      '<button disabled style="position:absolute;left:40px;top:6px;border:1px solid #dddddd;border-radius:4px;font-weight:bold;font-size:20px;letter-spacing:2px;color:#3cc51f;">免费看剧</button><iframe id="kk-ifm" src="https://laonongmin.online" width="100%" height="100%" style="border:none;border-radius:4px;"/>';
     open.innerText = "⏏️";
     open.title = "全屏打开";
     open.style.cssText =
-      "position:absolute;right:20px;top:0;width:32px;height:32px;cursor:pointer;font-size:20px;outline:none;border:none;border-radius:4px;background:transparent;";
+      "position:absolute;right:20px;top:0;z-index:99999;width:32px;height:32px;cursor:pointer;font-size:20px;outline:none;border:none;border-radius:4px;background:transparent;";
     open.onclick = function () {
-      window.open("https://htmls-ten.vercel.app");
+      window.open("https://laonongmin.online");
     };
     close.innerText = "❌";
     close.title = closeTitle;
     close.style.cssText =
-      "position:absolute;left:0;top:0;display:flex;justify-content:center;align-items:center;width:30px;height:30px;line-height:30px;transition: all 1.5s;transform:rotate(" +
+      "position:absolute;left:5px;top:5px;display:flex;justify-content:center;align-items:center;width:30px;height:30px;line-height:30px;transition: all 1.5s;transform:rotate(" +
       closeRotate +
       "deg);cursor:pointer;font-size:18px;background:transparent;outline:none;border:1px solid #f00;border-radius:50%;";
     close.onclick = function () {
@@ -1045,7 +1054,7 @@ function _typeof(o) {
         close.style.transform = "rotate(0deg)";
         close.title = "收起";
       } else {
-        ifm.style.bottom = "-350px";
+        ifm.style.bottom = "-465px";
         close.style.transform = "rotate(135deg)";
         close.title = "展开";
       }

@@ -66,3 +66,25 @@ function getItem(key) {
     ? void 0
     : _window2.getItem(key);
 }
+function removeElements() {
+  var elements =
+    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  elements = [].concat(elements);
+  elements.forEach(function (e) {
+    var tarEles = _$$(e) || [];
+    tarEles.forEach(function (ele) {
+      ele === null || ele === void 0 || ele.remove();
+    });
+  });
+}
+function addClass(ele, cls) {
+  var tarEles = _$$(ele) || [];
+  tarEles.forEach(function (ele) {
+    var _ele$classList;
+    ele === null ||
+      ele === void 0 ||
+      (_ele$classList = ele.classList) === null ||
+      _ele$classList === void 0 ||
+      _ele$classList.add(cls);
+  });
+}
