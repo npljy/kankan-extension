@@ -475,7 +475,7 @@ function _asyncToGenerator(n) {
   if (loc.includes("dbzy") || loc.includes("doubanz")) {
     if (loc.includes("/vod/")) {
       var vodList = _$$(".vodplayinfo li") || [];
-      var _api = "https://jsjiexi.com/play/?url=";
+      var api = "https://jsjiexi.com/play/?url=";
       vodList.forEach(function (li) {
         var _adoc$innerText;
         var adoc = _$$("a", li)[0];
@@ -485,7 +485,7 @@ function _asyncToGenerator(n) {
         var num = nums ? nums.split("$")[0] : "";
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes(".m3u8") && !xm.includes(_api)) href = _api + xm;
+        if (xm.includes(".m3u8") && !xm.includes(api)) href = api + xm;
         var _a = createLink(href, text);
         !(
           adoc !== null &&
@@ -498,8 +498,9 @@ function _asyncToGenerator(n) {
       insertJump(".vodplayinfo h3", ".ibox");
       insertLikeBtn();
       removeElements("header");
+    } else {
+      addClass(".xing_top", "kk-sticky");
     }
-    addClass(".xing_top", "kk-sticky");
     addClass(".search-text", "kk-search-ipt");
     addClass(".search-btn", "kk-search-btn");
     removeElements(".gg_top");
@@ -514,13 +515,14 @@ function _asyncToGenerator(n) {
       });
       insertLikeBtn();
       bindPlayBtn();
+    } else {
+      addClass("header", "kk-sticky");
     }
-    addClass("header", "kk-sticky");
     addClass(".search-input", "kk-search-ipt");
     addClass(".search_btn", "kk-search-btn");
   } else if (loc.includes("jisuz")) {
     if (loc.includes("/vod/")) {
-      var _api2 = "https://jsjiexi.com/play/?url=";
+      var _api = "https://jsjiexi.com/play/?url=";
       var _vodList2 = _$$(".vod-list .list-item") || [];
       _vodList2.forEach(function (li) {
         var _adoc$innerText2;
@@ -531,7 +533,7 @@ function _asyncToGenerator(n) {
         var num = nums ? nums.split("$")[0] : "";
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes(".m3u8") && !xm.includes(_api2)) href = _api2 + xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api)) href = _api + xm;
         var _a = createLink(href, text);
         !(
           adoc !== null &&
@@ -544,15 +546,16 @@ function _asyncToGenerator(n) {
       insertLikeBtn();
       insertJump(".vod-list h3", ".vod-detail");
       removeElements(".topbg");
+    } else {
+      addClass(".top-center", "kk-sticky");
     }
-    addClass(".top-center", "kk-sticky");
     addClass(".search-text", "kk-search-ipt");
     addClass(".top-search button", "kk-search-btn");
     removeElements(".topbg a");
   } else if (loc.includes("moduzy")) {
     if (loc.includes("/vod/")) {
       var _vodList3 = _$$(".content__playlist li") || [];
-      var _api3 = "https://jiexi.modujx01.com/?url=";
+      var _api2 = "https://jiexi.modujx01.com/?url=";
       _vodList3.forEach(function (li) {
         var _li$innerText;
         var adoc = _$$("a", li)[0];
@@ -562,7 +565,7 @@ function _asyncToGenerator(n) {
         var num = nums ? nums.split("$")[0] : "";
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes(".m3u8") && !xm.includes(_api3)) href = _api3 + xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api2)) href = _api2 + xm;
         var _a = createLink(href, text);
         !(
           li !== null &&
@@ -574,13 +577,14 @@ function _asyncToGenerator(n) {
       });
       insertLikeBtn();
       removeElements(".index-header");
+    } else {
+      addClass(".header", "kk-sticky");
     }
-    addClass(".header", "kk-sticky");
     addClass(".mac_wd.form-control", "kk-search-ipt");
   } else if (loc.includes("haohuazy") || loc.includes("haohuazyziyuan")) {
     if (loc.includes("detail")) {
       var _vodList4 = _$$(".vod-list .list-item") || [];
-      var _api4 = "https://hhjiexi.com/play/?url=";
+      var _api3 = "https://hhjiexi.com/play/?url=";
       _vodList4.forEach(function (li) {
         var _li$innerText2;
         var xm = _$$("a", li)[0].href;
@@ -589,7 +593,7 @@ function _asyncToGenerator(n) {
         var num = nums ? nums.split("$")[0] : "";
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes(".m3u8") && !xm.includes(_api4)) href = _api4 + xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api3)) href = _api3 + xm;
         var _a = createLink(href, text);
         !(
           li !== null &&
@@ -601,15 +605,16 @@ function _asyncToGenerator(n) {
       });
       insertLikeBtn();
       insertJump(".vod-list h3", ".vod-info");
+    } else {
+      addClass(".top", "kk-sticky");
     }
-    addClass(".top", "kk-sticky");
     addClass(".search-text", "kk-search-ipt");
     addClass(".top-search button", "kk-search-btn");
     removeElements([".card", "body>a"]);
   } else if (loc.includes("guangsuzy") || loc.includes("guangsuziyuan")) {
     if (loc.includes("detail")) {
       var _vodList5 = _$$(".dy-collect-list li") || [];
-      var _api5 = "https://www.gszyv.com/m3u8/?url=";
+      var _api4 = "https://www.gszyv.com/m3u8/?url=";
       _vodList5.forEach(function (li) {
         var _li$innerText3;
         var xm = _$$("a", li)[0].href;
@@ -618,7 +623,7 @@ function _asyncToGenerator(n) {
         var num = nums ? nums : "";
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes(".m3u8") && !xm.includes(_api5)) href = _api5 + xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api4)) href = _api4 + xm;
         var _a = createLink(href, text);
         !(
           li !== null &&
@@ -634,7 +639,7 @@ function _asyncToGenerator(n) {
   } else if (loc.includes("hongniuzy") || loc.includes("hongniuziyuan")) {
     if (loc.includes("detail")) {
       var _vodList6 = _$$(".vodplayinfo li") || [];
-      var _api6 = "https://www.hnjiexi.com/m3u8/?url=";
+      var _api5 = "https://www.hnjiexi.com/m3u8/?url=";
       _vodList6.forEach(function (li) {
         var _li$innerText4;
         var xm = _$$("a", li)[0].href;
@@ -643,7 +648,7 @@ function _asyncToGenerator(n) {
         var num = _$$("a", li)[0].title;
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes(".m3u8") && !xm.includes(_api6)) href = _api6 + xm;
+        if (xm.includes(".m3u8") && !xm.includes(_api5)) href = _api5 + xm;
         var _a = createLink(href, text);
         !(
           li !== null &&
@@ -656,11 +661,12 @@ function _asyncToGenerator(n) {
       insertLikeBtn();
       insertJump(".vodplayinfo h3", ".ibox");
       removeElements(".index-header");
+    } else {
+      addClass(".xing_top", "kk-sticky");
     }
-    removeElements(".index-header a");
-    addClass(".xing_top", "kk-sticky");
     addClass("#wd", "kk-search-ipt");
     addClass(".search-btn", "kk-search-btn");
+    removeElements(".index-header a");
   } else if (loc.includes("1080zyk")) {
     if (loc.includes("detail")) {
       var _vodList7 = _$$(".playlist li") || [];
@@ -695,7 +701,7 @@ function _asyncToGenerator(n) {
         var link = links[1];
         var text = "\u64AD\u653E:".concat(num);
         var href = link;
-        if (xm.includes(".m3u8") && !xm.includes(api)) href = jxUrl + link;
+        if (xm.includes(".m3u8") && !xm.includes(jxUrl)) href = jxUrl + link;
         var _a = createLink(href, text);
         !((_xm = xm) !== null && _xm !== void 0 && _xm.includes("全选")) &&
           li.append(_a);
@@ -703,8 +709,9 @@ function _asyncToGenerator(n) {
       insertLikeBtn();
       insertJump("#content h4", ".people");
       removeElements(".index-header");
+    } else {
+      addClass(".head_box", "kk-sticky");
     }
-    addClass(".head_box", "kk-sticky");
     addClass(".search-input", "kk-search-ipt");
     addClass("#searchbutton", "kk-search-btn");
   } else if (loc.includes("xinlangz")) {
@@ -736,6 +743,8 @@ function _asyncToGenerator(n) {
       });
       insertLikeBtn();
       removeElements(".indextop");
+    } else {
+      addClass(".tabletitle", "kk-sticky");
     }
     $(".index-top-long").css({
       display: "none",
@@ -756,7 +765,6 @@ function _asyncToGenerator(n) {
       });
     _$(".search_input").style.width = "300px";
     addClass("#layui-layer1", "kk-blocked");
-    addClass(".tabletitle", "kk-sticky");
     addClass(".search_input", "kk-search-ipt");
     addClass(".search_btn", "kk-search-btn");
   } else if (loc.includes("suonizy") || loc.includes("snzy")) {
@@ -800,8 +808,9 @@ function _asyncToGenerator(n) {
       insertLikeBtn();
       insertJump("#content h4", ".people");
       removeElements(".index-header");
+    } else {
+      addClass(".head_box", "kk-sticky");
     }
-    addClass(".head_box", "kk-sticky");
     addClass(".search-input", "kk-search-ipt");
     addClass("#searchbutton", "kk-search-btn");
     removeElements('.index-card a[href*="ads"]');
