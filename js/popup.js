@@ -616,7 +616,7 @@ $(function () {
   }
   function getData() {
     $.ajax({
-      url: "https://cdn.jsdelivr.net/npm/cainiaoblog@latest/extension.json",
+      url: "https://boke.laonongmin.online/app/extension.json",
       success: function success(resp) {
         var srcs = resp.srcs;
         var jxapis = resp.jxapis;
