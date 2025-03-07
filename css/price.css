@@ -1,11 +1,1 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.none {
-  width: 0 !important;
-  height: 0 !important;
-  visibility: hidden !important;
-  display: none !important;
-  opacity: 0 !important;
-}
+*{margin:0;padding:0}.none{width:0 !important;height:0 !important;visibility:hidden !important;display:none !important;opacity:0 !important}
