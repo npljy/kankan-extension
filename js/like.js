@@ -50,12 +50,21 @@ function addEvent() {
   $('.img-box img').on('mouseenter', function (e) {
     var tar = e.target;
     if (tar.tagName === 'IMG') {
-      // const { naturalHeight, naturalWidth } = tar
-      var clientHeight = document.documentElement.clientHeight;
-      $('.big-img img').attr('src', tar.src).css({
-        width: 'auto',
-        height: clientHeight - 50 + 'px'
-      });
+      var naturalHeight = tar.naturalHeight,
+        naturalWidth = tar.naturalWidth;
+      if (naturalHeight > naturalWidth) {
+        var clientHeight = document.documentElement.clientHeight;
+        $('.big-img img').attr('src', tar.src).css({
+          width: 'auto',
+          height: clientHeight - 50 + 'px'
+        });
+      } else {
+        var clientWidth = document.documentElement.clientWidth;
+        $('.big-img img').attr('src', tar.src).css({
+          height: 'auto',
+          width: clientWidth / 2 - 50 + 'px'
+        });
+      }
       $('.big-img').show();
     }
   }).on('mouseleave', function () {
