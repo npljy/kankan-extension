@@ -118,7 +118,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     addClass('.search-text', 'kk-search-ipt');
     addClass('.top-search button', 'kk-search-btn');
-    removeElements('.topbg a');
+    removeElements('.topbg>a');
   } else if (loc.includes('moduzy')) {
     if (loc.includes('/vod/')) {
       var _$5;
