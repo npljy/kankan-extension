@@ -57,7 +57,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     addClass('.search-btn', 'kk-search-btn');
     removeElements('.gg_top');
   } else if (loc.includes('mozhua')) {
-    if (loc.includes('/vod/')) {
+    if (loc.includes('/vod/detail/')) {
       var _$3;
 
       var _vodList = _$$('.listitems');
@@ -82,7 +82,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     addClass('.search-input', 'kk-search-ipt');
     addClass('.search_btn', 'kk-search-btn');
   } else if (loc.includes('jisuz')) {
-    if (loc.includes('/vod/')) {
+    if (loc.includes('/vod/detail/')) {
       var _$4;
 
       var _api = 'https://jsjiexi.com/play/?url=';
