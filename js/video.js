@@ -640,12 +640,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   }
 
   function insertJump(wrap, tar) {
-    var text = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'm3u8';
-
     var wraps = _$$(wrap);
 
     wraps.forEach(function (e) {
-      if (!e.innerText.includes(text)) {
+      if (e.innerText.includes('yun') || e.innerText.includes('云')) {
         e.id = 'kk-play-yun';
       } else {
         e.id = 'kk-play-m3u8';
