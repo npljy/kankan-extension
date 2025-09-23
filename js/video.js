@@ -211,7 +211,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     if (loc.includes('detail')) {
       var _$0;
       var _vodList8 = _$$('.playlist li') || [];
-      var jxUrl = 'https://svip.ffzyplay.com/?url=';
+      // var jxUrl = 'https://svip.ffzyplay.com/?url=';
+      var jxUrl = api
       _vodList8.forEach(function (li) {
         var _xm;
         var xm = _$$('font', li)[0].innerText;
@@ -336,7 +337,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
   } else if (loc.includes('huyazy') || loc.includes('huyaziyuan')) {
     if (loc.includes('vod/detail')) {
       var _$13;
-      var _jxUrl = 'https://huyajx.com/play?url=';
+      // var _jxUrl = 'https://huyajx.com/play?url=';
+      var jxUrl = api
       var _vodList11 = _$$('.vodplayinfo li') || [];
       _vodList11.forEach(function (li) {
         var _$$$4;
