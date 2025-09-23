@@ -1,4 +1,4 @@
-function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() { } function GeneratorFunction() { } function GeneratorFunctionPrototype() { } t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
@@ -239,7 +239,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     if (loc.includes('detail')) {
       var _$1;
       var _vodList9 = _$$('.collect-item-href .left') || [];
-      var jxApi = 'https://www.xinlangjiexi.com/m3u8/?url=';
+      // var jxApi = 'https://www.xinlangjiexi.com/m3u8/?url=';
+      var jxApi = api;
       _vodList9.forEach(function (li) {
         var num = _$('span', li).innerText;
         var text = "\u64AD\u653E:".concat(num);
@@ -470,7 +471,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     var wraps = _$$(wrap);
     wraps.forEach(function (e) {
       var _text = e.innerText;
-      if (_text.includes('yun') || _text.includes('云')) {
+      if (!_text.includes('m3u8') || _text.includes('yun') || _text.includes('云')) {
         e.id = 'kk-play-yun';
       } else {
         e.id = 'kk-play-m3u8';
@@ -523,47 +524,15 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     var isClosed = sessionStorage.getItem('isClosed') !== 'false';
     var ifm = document.createElement('div');
     var open = document.createElement('button');
-    var close = document.createElement('button');
-    var reload = document.createElement('button');
-    var initBtm = isClosed ? '-465px' : '0px';
-    var closeRotate = isClosed ? '135' : '0';
-    var closeTitle = isClosed ? '展开' : '收起';
-    ifm.style.cssText = 'position:fixed;bottom:' + initBtm + ';right:80px;z-index:99999;box-sizing:border-box;border:1px solid;border-radius:4px;width:300px;height:500px;background:#ffffff55;transition:bottom 1s;box-shadow: 0px 0px 20px 2px #000000cc';
-    ifm.innerHTML = '<button disabled style="position:absolute;left:40px;top:6px;border:1px solid #dddddd;border-radius:4px;font-weight:bold;font-size:20px;letter-spacing:2px;color:#3cc51f;">免费看剧</button><iframe id="kk-ifm" src="https://laonongmin.online" width="100%" height="100%" style="border:none;border-radius:4px;"/>';
-    open.innerText = '⏏️';
-    open.title = '全屏打开';
-    open.style.cssText = 'position:absolute;right:20px;top:0;z-index:99999;width:32px;height:32px;cursor:pointer;font-size:20px;outline:none;border:none;border-radius:4px;background:transparent;';
+    ifm.style.cssText = 'position:fixed;bottom:10px;right:80px;z-index:99999;box-sizing:border-box;border:1px solid;border-radius:4px;background:#ffffff55;transition:bottom 1s;box-shadow: 0px 0px 20px 2px #000000cc';
+    open.title = '点击打开';
+    open.innerText = '免费看剧';
+    open.style.cssText = 'padding:5px 10px;border:1px solid #dddddd;border-radius:4px;font-weight:bold;font-size:20px;letter-spacing:2px;color:#3cc51f;cursor:help;';
     open.onclick = function () {
       window.open('https://laonongmin.online');
     };
-    close.innerText = '❌';
-    close.title = closeTitle;
-    close.style.cssText = 'position:absolute;left:5px;top:5px;display:flex;justify-content:center;align-items:center;width:30px;height:30px;line-height:30px;transition: all 1.5s;transform:rotate(' + closeRotate + 'deg);cursor:pointer;font-size:18px;background:transparent;outline:none;border:1px solid #f00;border-radius:50%;';
-    close.onclick = function () {
-      if (isClosed) {
-        ifm.style.bottom = '0';
-        close.style.transform = 'rotate(0deg)';
-        close.title = '收起';
-      } else {
-        ifm.style.bottom = '-465px';
-        close.style.transform = 'rotate(135deg)';
-        close.title = '展开';
-      }
-      isClosed = !isClosed;
-      localStorage.setItem('isClosed', isClosed);
-    };
-    reload.innerText = '🔁';
-    reload.title = '刷新';
-    reload.style.cssText = 'position:absolute;right:55px;top:0;width:32px;height:32px;cursor:pointer;font-size:20px;outline:none;border:none;border-radius:4px;background:transparent;';
-    reload.onclick = function () {
-      document.getElementById('kk-ifm').contentWindow.location.href = 'https://laonongmin.online';
-    };
-    ifm.appendChild(close);
+
     ifm.appendChild(open);
-    ifm.appendChild(reload);
     $('body').append(ifm);
-    var metaBase = document.createElement('base');
-    metaBase.target = '_blank';
-    document.getElementById('kk-ifm').contentWindow.document.head.appendChild(metaBase);
   }
 })();
