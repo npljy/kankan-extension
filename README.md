@@ -1,6 +1,3 @@
-<div id="webtraf_17015" style="width:100%;display: flex;justify-content: center; align-items: center;">
-      <script type="text/javascript" src="https://webtrafic.ru/ads.php?uid=17015" async></script>
-</div>
 # 看看视频chrome扩展，edge可用
 
 [从chrome扩展商店安装](https://chrome.google.com/webstore/detail/%E7%9C%8B%E7%9C%8B/pegiockicjmdnkjbnppeeakeogdkegac?hl=zh-CN&authuser=0)
