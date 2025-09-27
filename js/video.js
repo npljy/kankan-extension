@@ -1,4 +1,4 @@
-function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() { } function GeneratorFunction() { } function GeneratorFunctionPrototype() { } t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
@@ -28,6 +28,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums ? nums.split('$')[0] : '';
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
+        if (!xm.includes(api)) {
+          if (xm.includes('.m3u8')) href = api + xm;else href = api + xm + '&iframe=true';
+        }
         if (xm.includes('.m3u8') && !xm.includes(api)) href = api + xm;
         var _a = createLink(href, text);
         !(adoc !== null && adoc !== void 0 && (_adoc$innerText = adoc.innerText) !== null && _adoc$innerText !== void 0 && _adoc$innerText.includes('全选')) && adoc.after(_a);
@@ -49,6 +52,11 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       _vodList.forEach(function (li) {
         var num = li.innerText.split('$')[0];
         var playBtn = _$('.btn a', li);
+        var ahref = playBtn.href;
+        var m3u8Link = ahref.match(/=(https?:\/\/[^&]+?\.m3u8)/);
+        if (m3u8Link && m3u8Link[1]) {
+          playBtn.href = api + encodeURIComponent(m3u8Link[1]);
+        }
         playBtn.innerText = playBtn.innerText + ':' + num;
         playBtn.classList.add('kk-btn');
       });
@@ -74,7 +82,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums ? nums.split('$')[0] : '';
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes('.m3u8') && !xm.includes(api)) href = api + xm;
+        if (!xm.includes(api)) {
+          if (xm.includes('.m3u8')) href = api + xm;else href = api + xm + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !(adoc !== null && adoc !== void 0 && (_adoc$innerText2 = adoc.innerText) !== null && _adoc$innerText2 !== void 0 && _adoc$innerText2.includes('全选')) && adoc.after(_a);
       });
@@ -102,7 +112,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums ? nums.split('$')[0] : '';
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes('.m3u8') && !xm.includes(api)) href = api + xm;
+        if (!xm.includes(api)) {
+          if (xm.includes('.m3u8')) href = api + xm;else href = api + xm + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !(li !== null && li !== void 0 && (_li$innerText = li.innerText) !== null && _li$innerText !== void 0 && _li$innerText.includes('全选')) && li.append(_a);
       });
@@ -126,7 +138,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums ? nums.split('$')[0] : '';
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes('.m3u8') && !xm.includes(api)) href = api + xm;
+        if (!xm.includes(api)) {
+          if (xm.includes('.m3u8')) href = api + xm;else href = api + xm + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !(li !== null && li !== void 0 && (_li$innerText2 = li.innerText) !== null && _li$innerText2 !== void 0 && _li$innerText2.includes('全选')) && li.append(_a);
       });
@@ -152,7 +166,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums ? nums : '';
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes('.m3u8') && !xm.includes(api)) href = api + xm;
+        if (!xm.includes(api)) {
+          if (xm.includes('.m3u8')) href = api + xm;else href = api + xm + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !(li !== null && li !== void 0 && (_li$innerText3 = li.innerText) !== null && _li$innerText3 !== void 0 && _li$innerText3.includes('全选')) && li.append(_a);
       });
@@ -173,7 +189,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = _$$('a', li)[0].title;
         var text = "\u64AD\u653E:".concat(num);
         var href = xm;
-        if (xm.includes('.m3u8') && !xm.includes(api)) href = api + xm;
+        if (!xm.includes(api)) {
+          if (xm.includes('.m3u8')) href = api + xm;else href = api + xm + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !(li !== null && li !== void 0 && (_li$innerText4 = li.innerText) !== null && _li$innerText4 !== void 0 && _li$innerText4.includes('全选')) && li.append(_a);
       });
@@ -198,6 +216,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums[0];
         var text = "\u64AD\u653E:".concat(num);
         var link = ((_$$$ = _$$('a', li)[0]) === null || _$$$ === void 0 ? void 0 : _$$$.href) || nums[1];
+        var m3u8Link = link.match(/=(https?:\/\/[^&]+?\.m3u8)/);
+        if (m3u8Link && m3u8Link[1]) {
+          link = api + encodeURIComponent(m3u8Link[1]);
+        }
         var _a = createLink(link, text);
         !(xm !== null && xm !== void 0 && xm.includes('全选')) && li.append(_a);
       });
@@ -211,8 +233,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     if (loc.includes('detail')) {
       var _$0;
       var _vodList8 = _$$('.playlist li') || [];
-      // var jxUrl = 'https://svip.ffzyplay.com/?url=';
-      var jxUrl = api
+      // const jxUrl = 'https://svip.ffzyplay.com/?url='
+      var jxUrl = api;
       _vodList8.forEach(function (li) {
         var _xm;
         var xm = _$$('font', li)[0].innerText;
@@ -222,7 +244,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var link = links[1];
         var text = "\u64AD\u653E:".concat(num);
         var href = link;
-        if (xm.includes('.m3u8') && !xm.includes(jxUrl)) href = jxUrl + link;
+        if (!xm.includes(jxUrl)) {
+          if (xm.includes('.m3u8')) href = jxUrl + link;else href = jxUrl + link + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !((_xm = xm) !== null && _xm !== void 0 && _xm.includes('全选')) && li.append(_a);
       });
@@ -239,14 +263,16 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     if (loc.includes('detail')) {
       var _$1;
       var _vodList9 = _$$('.collect-item-href .left') || [];
-      // var jxApi = 'https://www.xinlangjiexi.com/m3u8/?url=';
+      // const jxApi = 'https://www.xinlangjiexi.com/m3u8/?url='
       var jxApi = api;
       _vodList9.forEach(function (li) {
         var num = _$('span', li).innerText;
         var text = "\u64AD\u653E:".concat(num);
         var aEle = _$('a', li);
         var _link = aEle.href;
-        if (_link.includes('.m3u8') && !_link.includes(jxApi)) _link = jxApi + _link;
+        if (!_link.includes(api)) {
+          if (_link.includes('.m3u8')) _link = api + _link;else _link = api + _link + '&iframe=true';
+        }
         var _a = createLink(_link, text);
         li.append(_a);
       });
@@ -262,6 +288,11 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
       _vodList0.forEach(function (li) {
         var num = li.innerText.split('$')[0];
         var playBtn = _$('.btn a', li);
+        var ahref = playBtn.href;
+        var m3u8Link = ahref.match(/=(https?:\/\/[^&]+?\.m3u8)/);
+        if (m3u8Link && m3u8Link[1]) {
+          playBtn.href = api + encodeURIComponent(m3u8Link[1]);
+        }
         playBtn.innerText = playBtn.innerText + ':' + num;
         playBtn.classList.add('kk-btn');
       });
@@ -301,6 +332,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums[0];
         var text = "\u64AD\u653E:".concat(num);
         var link = ((_$$$2 = _$$('a', li)[0]) === null || _$$$2 === void 0 ? void 0 : _$$$2.href) || nums[1];
+        var m3u8Link = link.match(/=(https?:\/\/[^&]+?\.m3u8)/);
+        if (m3u8Link && m3u8Link[1]) {
+          link = api + encodeURIComponent(m3u8Link[1]);
+        }
         var _a = createLink(link, text);
         !(xm !== null && xm !== void 0 && xm.includes('全选')) && li.append(_a);
       });
@@ -322,6 +357,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var num = nums[0];
         var text = "\u64AD\u653E:".concat(num);
         var link = ((_$$$3 = _$$('a', li)[0]) === null || _$$$3 === void 0 ? void 0 : _$$$3.href) || nums[1];
+        var m3u8Link = link.match(/=(https?:\/\/[^&]+?\.m3u8)/);
+        if (m3u8Link && m3u8Link[1]) {
+          link = api + encodeURIComponent(m3u8Link[1]);
+        }
         var _a = createLink(link, text);
         !(xm !== null && xm !== void 0 && xm.includes('全选')) && li.append(_a);
       });
@@ -338,8 +377,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
   } else if (loc.includes('huyazy') || loc.includes('huyaziyuan')) {
     if (loc.includes('vod/detail')) {
       var _$13;
-      // var _jxUrl = 'https://huyajx.com/play?url=';
-      var jxUrl = api
+      // const jxUrl = 'https://huyajx.com/play?url='
+      var jxUrl = api;
       var _vodList11 = _$$('.vodplayinfo li') || [];
       _vodList11.forEach(function (li) {
         var _$$$4;
@@ -349,7 +388,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
         var text = "\u64AD\u653E:".concat(num);
         var link = ((_$$$4 = _$$('a', li)[0]) === null || _$$$4 === void 0 ? void 0 : _$$$4.href) || nums[1];
         var href = link;
-        if (xm.includes('.m3u8') && !xm.includes(_jxUrl)) href = _jxUrl + link;
+        if (xm.includes('.m3u8') && !xm.includes(jxUrl)) href = jxUrl + link;
+        if (!link.includes(api)) {
+          if (link.includes('.m3u8')) href = api + link;else href = api + link + '&iframe=true';
+        }
         var _a = createLink(href, text);
         !(xm !== null && xm !== void 0 && xm.includes('全选')) && li.append(_a);
       });
@@ -531,7 +573,6 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
     open.onclick = function () {
       window.open('https://laonongmin.online');
     };
-
     ifm.appendChild(open);
     $('body').append(ifm);
   }
